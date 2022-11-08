@@ -80,7 +80,7 @@ def lock(message, lock_file_name):
 
     split_encrypt_clean = encrypt_message_clean.split(' ')
     clean_string = ' '.join([hex(int(i)) for i in split_encrypt_clean])
-    print(f'\nEncrypted Message:\n{clean_string}')
+    print(f'\nEncrypted Message:\n{clean_string}\n')
 
     # overwrite lock file with scrambled and hashed values
     hashed_scrambled_lock_list = []
@@ -195,7 +195,7 @@ def unlock(encrypted_msg_file):
         for lock_val in reassembled_lock_list:
             dehashed_char ^= lock_val
         decrypted_msg = decrypted_msg + chr(dehashed_char)
-    print(f'\nDecrypted Message: {decrypted_msg}')
+    print(f'\nDecrypted Message: {decrypted_msg}\n')
 
     # generate random lock file name: [random]_lock.txt
     files_in_dir = os.listdir()

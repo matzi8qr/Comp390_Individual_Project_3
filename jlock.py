@@ -24,7 +24,7 @@ def main():
                   '\n\n\tuse this command to lock/encrypt a message\n'
                   '\n\tsyntax: jlock.py -lock <lock depth (int)> <message (no spaces)>\n'
                   '\n\t\t(Lock depth sets the complexity of the Lock. Higher numbers make the\n'
-                  '\t\tlock more robust. Note: larger locks require more processing time to\n)'
+                  '\t\tlock more robust. Note: larger locks require more processing time to.)\n'
                   '\t\tencrypt/decrypt messages.)\n'
                   '\n\texample: jlock.py -lock 20 ThisIsASecretMessage\n'
                   '\n\t\tA \'XXXX_encrypted_msg.txt\' file will be generated in the current folder.\n'
@@ -43,24 +43,24 @@ def main():
             print('\t-msg'
                   '\n\n\tuse this command to print a list of PLAINTEXT message files in the current directory\n'
                   '\n\tThese files contain messages that have been decoded. The files\' contents consist of only\n'
-                  '\n\tthe decoded message.\n'
-                  '\n\n\tSample output:\n\n'
-                  '\tfziW_decrypted_msg.txt -> BobIsHere!\n'
-                  '\tkvnE_decrypted_msg.txt -> ThisMessageHasBeenDecoded\n'
-                  '\ttHhw_decrypted_msg.txt -> Password123abc\n\n')
+                  '\tthe decoded message.\n'
+                  '\n\tSample output:\n\n'
+                  '\t\tfziW_decrypted_msg.txt -> BobIsHere!\n'
+                  '\t\tkvnE_decrypted_msg.txt -> ThisMessageHasBeenDecoded\n'
+                  '\t\ttHhw_decrypted_msg.txt -> Password123abc\n')
             print('\n', '\t', '=' * 40, '\n')
             print('\t-locked'
                   '\n\n\tuse this command to print a list of ENCRYPTED message files in the current directory.\n'
                   '\n\tThese files contain encoded (locked) messages. Encoded messaages will be printed below\n'
-                  '\n\teach file name.\n'
-                  '\n\n\tSample output:\n'
-                  '\nEZIQ_encrypted_msg.txt\n'
-                  '\n2549237579724250588630964067 2549237579724250572170987160 2549237579724250575163710234\n'
-                  '\nIOuI_encrypted_msg.txt\n'
-                  '\n1379391643836344545153817049 1379391643836344530746550938 1379391643836344534862912684\n'
-                  '\nJZmg_encrypted_msg.txt\n'
-                  '\n4052088978294139476623492337 4052088978294139496828912502\n\n')
-            print('\n', '\t', '=' * 40, '\n')
+                  '\teach file name.\n'
+                  '\n\tSample output:\n'
+                  '\n\t\tEZIQ_encrypted_msg.txt\n'
+                  '\t\t2549237579724250588630964067 2549237579724250572170987160 2549237579724250575163710234\n'
+                  '\n\t\tIOuI_encrypted_msg.txt\n'
+                  '\t\t1379391643836344545153817049 1379391643836344530746550938 1379391643836344534862912684\n'
+                  '\n\t\tJZmg_encrypted_msg.txt\n'
+                  '\t\t4052088978294139476623492337 4052088978294139496828912502\n')
+            print('\t', '=' * 40, '\n')
 
         elif arg_list[1] == '-msg':
             # displays list of decrypted plain text message files
@@ -71,9 +71,9 @@ def main():
                 print('\t\nPlaintext message files:\n')
                 for file_name in file_list:
                     if file_name[-18:] == '_decrypted_msg.txt':
-                        print(f'\t{file_name}')
+                        print(f'\t{file_name}', end='')
                         with open(file_name, 'r') as msg_fileIO:
-                            print(f'\t\t{msg_fileIO.readline()}')
+                            print(f' -> {msg_fileIO.readline()}')
 
         elif arg_list[1] == '-locked':
             # displays list of encrypted (locked) files
@@ -114,7 +114,7 @@ def main():
                 print(f'Invalid lock depth: \'{arg_list[2]}\'. Must be an integer greater than 0 (zero).')
                 return
             lock_file = util_funcs.generate_lock_file(arg_list[2])
-            util_funcs.lock(arg_list[2], lock_file)
+            util_funcs.lock(arg_list[3], lock_file)
         else:
             print('Error: invalid command')
 
