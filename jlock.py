@@ -24,7 +24,7 @@ def main():
                   '\n\n\tuse this command to lock/encrypt a message\n'
                   '\n\tsyntax: jlock.py -lock <lock depth (int)> <message (no spaces)>\n'
                   '\n\t\t(Lock depth sets the complexity of the Lock. Higher numbers make the\n'
-                  '\t\tlock more robust. Note: larger locks require more processing time to.)\n'
+                  '\t\tlock more robust. Note: larger locks require more processing time to\n'
                   '\t\tencrypt/decrypt messages.)\n'
                   '\n\texample: jlock.py -lock 20 ThisIsASecretMessage\n'
                   '\n\t\tA \'XXXX_encrypted_msg.txt\' file will be generated in the current folder.\n'
