@@ -230,7 +230,7 @@ def generate_lock_file(size):
             break
 
     with open(random_file_name, 'w') as text_file:
-        for line_ct in range(size):
+        for line_ct in range(int(size)):
             rand_int1 = random.randint(0, sys.maxsize)
             if line_ct < size - 1:
                 print(f'{rand_int1}', file=text_file)

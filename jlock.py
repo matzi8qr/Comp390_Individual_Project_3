@@ -41,16 +41,13 @@ def main():
                   '\t\tgenerated decrypted message filename.\n')
             print('\n', '\t', '=' * 40, '\n')
             print('\t-msg'
-                  '\n\n\tuse this command to print a list of PLAINTEXT message files in the current directory.\n'
+                  '\n\n\tuse this command to print a list of PLAINTEXT message files in the current directory\n'
                   '\n\tThese files contain messages that have been decoded. The files\' contents consist of only\n'
                   '\n\tthe decoded message.\n'
-                  '\n\n\tSample output:\n'
-                  '\nfziW_decrypted_msg.txt\n'
-                  '\nBobIsHere!\n'
-                  '\nkvnE_decrypted_msg.txt\n'
-                  '\nThisMessageHasBeenDecoded\n'
-                  '\ntHhw_decrypted_msg.txt\n'
-                  '\nPassword123abc\n\n')
+                  '\n\n\tSample output:\n\n'
+                  '\tfziW_decrypted_msg.txt -> BobIsHere!\n'
+                  '\tkvnE_decrypted_msg.txt -> ThisMessageHasBeenDecoded\n'
+                  '\ttHhw_decrypted_msg.txt -> Password123abc\n\n')
             print('\n', '\t', '=' * 40, '\n')
             print('\t-locked'
                   '\n\n\tuse this command to print a list of ENCRYPTED message files in the current directory.\n'
