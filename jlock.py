@@ -60,7 +60,8 @@ def main():
                   '\n\t\t\tEZIQ_encrypted_msg.txt\n'
                   '\t\t\t0x11bcea833149d7dc08eb6a73 0x11bcea833149d7db47ad0240 0x11bcea833149d7dcca29d2a6\n'
                   '\n\t\t\tIOuI_encrypted_msg.txt\n'
-                  '\t\t\t0x10002ab80be7bf94b64129ec 0x10002ab80be7bf97c584415b 0x10002ab80be7bf973052e78f 0x10002ab80be7bf985ab59b27\n'
+                  '\t\t\t0x10002ab80be7bf94b64129ec 0x10002ab80be7bf97c584415b 0x10002ab80be7bf973052e78f '
+                  '0x10002ab80be7bf985ab59b27\n'
                   '\n\t\t\tJZmg_encrypted_msg.txt\n'
                   '\t\t\t0x4d9c9771492f4c79ee2d424 0x4d9c9771492f4c84b664555 0x4d9c9771492f4c79ee2d424\n')
             print(f'\n\t{separation_str}\n')

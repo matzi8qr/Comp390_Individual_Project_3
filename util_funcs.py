@@ -253,4 +253,3 @@ def generate_lock_file(size):
 # encrypt_msg_file2 = lock('Password123abc', lock_file)
 # unlock(encrypt_msg_file2)
 # test ascii conversion
-
