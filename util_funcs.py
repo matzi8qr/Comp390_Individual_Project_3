@@ -117,7 +117,7 @@ def lock(message, lock_file_name):
         key_fileIO.write(f'{key_dict_string}')
 
     encrypt_message_dict = {
-        'encrypted_message': encrypt_message_clean,
+        'encrypted_message': clean_string,
         'key_file': random_key_file_name,
     }
 
@@ -191,7 +191,7 @@ def unlock(encrypted_msg_file):
     decrypted_msg = ''
     for encrypt_char in split_msg_list:
         # dehash char:
-        dehashed_char = int(encrypt_char) * mult_inverse % m_val
+        dehashed_char = int(encrypt_char[2:], 16) * mult_inverse % m_val
         for lock_val in reassembled_lock_list:
             dehashed_char ^= lock_val
         decrypted_msg = decrypted_msg + chr(dehashed_char)

@@ -17,50 +17,53 @@ def main():
     elif len(arg_list) == 2:
         command = arg_list[1]
         if command == '-help' or command == '-h':
-            print('\n', '\t', 'JLOCK Help')
-            print('\t', '(c)2022 -J. Matta ')
-            print('\n', '\t', '=' * 40, '\n')
+            separation_str = '=' * 50
+            print(f'\n\t{separation_str}\n')
+            print('\t\t', 'JLOCK Help')
+            print('\t\t', '(c)2022 J. Matta ')
+            print(f'\n\t{separation_str}\n')
             print('\t-lock'
-                  '\n\n\tuse this command to lock/encrypt a message\n'
-                  '\n\tsyntax: jlock.py -lock <lock depth (int)> <message (no spaces)>\n'
-                  '\n\t\t(Lock depth sets the complexity of the Lock. Higher numbers make the\n'
-                  '\t\tlock more robust. Note: larger locks require more processing time to\n'
-                  '\t\tencrypt/decrypt messages.)\n'
-                  '\n\texample: jlock.py -lock 20 ThisIsASecretMessage\n'
-                  '\n\t\tA \'XXXX_encrypted_msg.txt\' file will be generated in the current folder.\n'
-                  '\t\t\'X\' represents a random ascii letter character.\n'
-                  '\t\tThe encrypted message will also be printed to the terminal along with the\n'
-                  '\t\tgenerated encrypted message filename.\n')
-            print('\n', '\t', '=' * 40, '\n')
+                  '\n\n\t\tuse this command to lock/encrypt a message\n'
+                  '\n\t\tsyntax: jlock.py -lock <lock depth (int > 0)> <message (no spaces)>\n'
+                  '\n\t\t\t(Lock depth sets the complexity of the Lock. Higher numbers make the\n'
+                  '\t\t\tlock more robust. Note: larger locks require more processing time to\n'
+                  '\t\t\tencrypt/decrypt messages.)\n'
+                  '\n\t\texample: jlock.py -lock 20 ThisIsASecretMessage\n'
+                  '\n\t\t\tA \'XXXX_encrypted_msg.txt\' file will be generated in the current folder.\n'
+                  '\t\t\t\'X\' represents a random ascii letter character.\n'
+                  '\t\t\tThe encrypted message will also be printed to the terminal along with the\n'
+                  '\t\t\tgenerated encrypted message filename.\n')
+            print(f'\n\t{separation_str}\n')
             print('\t-unlock'
-                  '\n\n\tuse this command to unlock/decrypt a message\n'
-                  '\n\tsyntax: jlock.py -unlock <encrypted_message_filename (with file extension)>\n'
-                  '\t\t(encrypted message file must be in the same folder as jlock.py)\n'
-                  '\n\texample: jlock.py -unlock uRtq_encrypted_msg.txt\n'
-                  '\t\tThe decrypted message will also be printed to the terminal along with the\n'
-                  '\t\tgenerated decrypted message filename.\n')
-            print('\n', '\t', '=' * 40, '\n')
+                  '\n\n\t\tuse this command to unlock/decrypt a message\n'
+                  '\n\t\tsyntax: jlock.py -unlock <encrypted_message_filename (with file extension)>\n'
+                  '\n\t\t\t(encrypted message file must be in the same folder as jlock.py)\n'
+                  '\n\t\texample: jlock.py -unlock uRtq_encrypted_msg.txt\n'
+                  '\n\t\t\tA decrypted message file will be generated in the current working directory.\n'
+                  '\t\t\tThe decrypted message will also be printed to the terminal along with the\n'
+                  '\t\t\tgenerated decrypted message filename.\n')
+            print(f'\n\t{separation_str}\n')
             print('\t-msg'
-                  '\n\n\tuse this command to print a list of PLAINTEXT message files in the current directory\n'
-                  '\n\tThese files contain messages that have been decoded. The files\' contents consist of only\n'
-                  '\tthe decoded message.\n'
-                  '\n\tSample output:\n\n'
-                  '\t\tfziW_decrypted_msg.txt -> BobIsHere!\n'
-                  '\t\tkvnE_decrypted_msg.txt -> ThisMessageHasBeenDecoded\n'
-                  '\t\ttHhw_decrypted_msg.txt -> Password123abc\n')
-            print('\n', '\t', '=' * 40, '\n')
+                  '\n\n\t\tuse this command to print a list of PLAINTEXT message files in the current directory\n'
+                  '\n\t\tThese files contain messages that have been decoded. The files\' contents consist of only\n'
+                  '\t\tthe decoded message.\n'
+                  '\n\t\tSample output:\n\n'
+                  '\t\t\tfziW_decrypted_msg.txt -> BobIsHere!\n'
+                  '\t\t\tkvnE_decrypted_msg.txt -> ThisMessageHasBeenDecoded\n'
+                  '\t\t\ttHhw_decrypted_msg.txt -> Password123abc\n')
+            print(f'\n\t{separation_str}\n')
             print('\t-locked'
-                  '\n\n\tuse this command to print a list of ENCRYPTED message files in the current directory.\n'
-                  '\n\tThese files contain encoded (locked) messages. Encoded messaages will be printed below\n'
-                  '\teach file name.\n'
-                  '\n\tSample output:\n'
-                  '\n\t\tEZIQ_encrypted_msg.txt\n'
-                  '\t\t2549237579724250588630964067 2549237579724250572170987160 2549237579724250575163710234\n'
-                  '\n\t\tIOuI_encrypted_msg.txt\n'
-                  '\t\t1379391643836344545153817049 1379391643836344530746550938 1379391643836344534862912684\n'
-                  '\n\t\tJZmg_encrypted_msg.txt\n'
-                  '\t\t4052088978294139476623492337 4052088978294139496828912502\n')
-            print('\t', '=' * 40, '\n')
+                  '\n\n\t\tuse this command to print a list of ENCRYPTED message files in the current directory.\n'
+                  '\n\t\tThese files contain encoded (locked) messages. Encoded messaages will be printed below\n'
+                  '\t\teach file name.\n'
+                  '\n\t\tSample output:\n'
+                  '\n\t\t\tEZIQ_encrypted_msg.txt\n'
+                  '\t\t\t0x11bcea833149d7dc08eb6a73 0x11bcea833149d7db47ad0240 0x11bcea833149d7dcca29d2a6\n'
+                  '\n\t\t\tIOuI_encrypted_msg.txt\n'
+                  '\t\t\t0x10002ab80be7bf94b64129ec 0x10002ab80be7bf97c584415b 0x10002ab80be7bf973052e78f 0x10002ab80be7bf985ab59b27\n'
+                  '\n\t\t\tJZmg_encrypted_msg.txt\n'
+                  '\t\t\t0x4d9c9771492f4c79ee2d424 0x4d9c9771492f4c84b664555 0x4d9c9771492f4c79ee2d424\n')
+            print(f'\n\t{separation_str}\n')
 
         elif arg_list[1] == '-msg':
             # displays list of decrypted plain text message files
