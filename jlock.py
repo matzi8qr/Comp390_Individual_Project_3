@@ -4,7 +4,7 @@ import os
 import json
 
 
-def main():
+def jlock_main():
     # get command line arguments
     arg_list = sys.argv[:]
 
@@ -152,4 +152,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    jlock_main()
