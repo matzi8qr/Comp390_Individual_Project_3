@@ -136,11 +136,11 @@ def jlock_main():
             try:
                 lock_depth = int(arg_list[2])
             except ValueError:
-                print(f'Invalid lock depth: \'{arg_list[2]}\'. Must be an integer greater than 0 (zero).')
+                print(f'\n\tInvalid lock depth: \'{arg_list[2]}\'. Must be an integer greater than 0 (zero).\n')
                 return
             # check if lock depth is greater than zero
             if lock_depth <= 0:
-                print(f'Invalid lock depth: \'{arg_list[2]}\'. Must be an integer greater than 0 (zero).')
+                print(f'\n\tInvalid lock depth: \'{arg_list[2]}\'. Must be an integer greater than 0 (zero).\n')
                 return
 
             lock_file = util_funcs.generate_lock_file(arg_list[2])
