@@ -1,6 +1,4 @@
 
-
-
 # https://rosettacode.org/wiki/Modular_inverse#Python
 def extended_gcd(aa, bb):
     lastremainder, remainder = abs(aa), abs(bb)

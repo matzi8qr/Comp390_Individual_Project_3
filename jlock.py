@@ -154,19 +154,3 @@ def jlock_main():
 
 if __name__ == '__main__':
     jlock_main()
-
-    # test function calls
-
-    # a lock depth of 10,000,000 seems to be the reasonable limit for processing time
-
-    # lock_file = generate_lock_file(10)
-    # encrypt_msg_file = lock('Bob_is_cool', lock_file)
-    # unlock(encrypt_msg_file)
-    #
-    # lock_file = generate_lock_file(20)
-    # encrypt_msg_file1 = lock('Decoded_Message', lock_file)
-    # unlock(encrypt_msg_file1)
-    #
-    # lock_file = generate_lock_file(20)
-    # encrypt_msg_file2 = lock('Password123abc', lock_file)
-    # unlock(encrypt_msg_file2)
