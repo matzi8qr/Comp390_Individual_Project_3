@@ -78,16 +78,15 @@ def jlock_main():
 
         elif command == '-msg':
             # displays list of decrypted plain text message files
-            file_list = os.listdir()
-            if len(file_list) == 0:
+            decrypted_file_list = [file for file in os.listdir() if file.endswith('_decrypted_msg.txt')]
+            if len(decrypted_file_list) == 0:
                 print('\t\nNo plaintext message files available.\n')
             else:
                 print('\t\nPlaintext message files:\n')
-                for file_name in file_list:
-                    if file_name[-18:] == '_decrypted_msg.txt':
-                        print(f'\t{file_name}', end='')
-                        with open(file_name, 'r') as msg_fileIO:
-                            print(f' -> {msg_fileIO.readline()}')
+                for file_name in decrypted_file_list:
+                    print(f'\t{file_name}', end='')
+                    with open(file_name, 'r') as msg_fileIO:
+                        print(f' -> {msg_fileIO.readline()}')
 
         elif command == '-locked':
             # displays list of encrypted (locked) files
