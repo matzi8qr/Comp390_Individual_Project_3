@@ -126,7 +126,7 @@ def jlock_main():
             if target_encrypted_file in file_list:
                 unlock(target_encrypted_file)
             else:
-                print(f'{target_encrypted_file} does not exist')
+                print(f'\n\t{target_encrypted_file} does not exist\n')
         else:
             print('Error: invalid command')
 
