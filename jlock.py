@@ -99,7 +99,7 @@ def jlock_main():
                     print(f'\t{file_name}')
                     with open(file_name, 'r') as encrypt_msg_fileIO:
                         json_obj = json.loads(encrypt_msg_fileIO.read())
-                        print(f'\t\t{json_obj["encrypted_message"]}')
+                        print(f'\t\t{json_obj["encrypted_message"]}\n')
 
         elif command == '-clear':
             # gather all text files from current directory (use list comprehension)
