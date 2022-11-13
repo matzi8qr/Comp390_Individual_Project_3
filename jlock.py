@@ -80,9 +80,9 @@ def jlock_main():
             # displays list of decrypted plain text message files
             decrypted_file_list = [file for file in os.listdir() if file.endswith('_decrypted_msg.txt')]
             if len(decrypted_file_list) == 0:
-                print('\t\nNo plaintext message files available.\n')
+                print('\n\tNo plaintext message files available.\n')
             else:
-                print('\t\nPlaintext message files:\n')
+                print('\n\tPlaintext message files:\n')
                 for file_name in decrypted_file_list:
                     print(f'\t{file_name}', end='')
                     with open(file_name, 'r') as msg_fileIO:
@@ -90,17 +90,16 @@ def jlock_main():
 
         elif command == '-locked':
             # displays list of encrypted (locked) files
-            file_list = os.listdir()
-            if len(file_list) == 0:
-                print('\t\nNo encrypted message files available.\n')
+            encrypted_file_list = [file for file in os.listdir() if file.endswith('_encrypted_msg.txt')]
+            if len(encrypted_file_list) == 0:
+                print('\n\tNo encrypted message files available.\n')
             else:
-                print('\t\nEncrypted message files:\n')
-                for file_name in file_list:
-                    if file_name[-18:] == '_encrypted_msg.txt':
-                        print(f'\t{file_name}')
-                        with open(file_name, 'r') as encrypt_msg_fileIO:
-                            json_obj = json.loads(encrypt_msg_fileIO.read())
-                            print(f'\t\t{json_obj["encrypted_message"]}')
+                print('\n\tEncrypted message files:\n')
+                for file_name in encrypted_file_list:
+                    print(f'\t{file_name}')
+                    with open(file_name, 'r') as encrypt_msg_fileIO:
+                        json_obj = json.loads(encrypt_msg_fileIO.read())
+                        print(f'\t\t{json_obj["encrypted_message"]}')
 
         elif command == '-clear':
             # gather all text files from current directory (use list comprehension)
