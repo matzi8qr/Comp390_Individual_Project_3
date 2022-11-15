@@ -121,12 +121,13 @@ def jlock_main():
 
     elif arg_list_len == 3:
         if arg_list[1] == '-unlock':
-            target_encrypted_file = arg_list[2]
+            target_encrypted_file: str = arg_list[2]
             file_list = os.listdir()
-            if target_encrypted_file in file_list:
+            if (target_encrypted_file in file_list) and (len(target_encrypted_file) == 22) and \
+                    (target_encrypted_file[-18:] == '_encrypted_msg.txt'):
                 unlock(target_encrypted_file)
             else:
-                print(f'\n\t{target_encrypted_file} does not exist\n')
+                print(f'\n\t{target_encrypted_file} does not exist or is invalid\n')
         else:
             print('Error: invalid command')
 
