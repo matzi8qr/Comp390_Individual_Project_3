@@ -1,3 +1,6 @@
+"""
+A calculator of sorts, this file contains functions to handle the mathematical computations.
+"""
 
 # https://rosettacode.org/wiki/Modular_inverse#Python
 def extended_gcd(aa, bb):

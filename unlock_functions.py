@@ -1,3 +1,7 @@
+"""
+Contains the unlock function to decrypt messages encrypted with jlock
+"""
+
 import json
 import random
 import string

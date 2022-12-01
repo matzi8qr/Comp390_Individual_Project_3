@@ -1,3 +1,7 @@
+"""
+Contains the necessary 'lock' function to encrypt a file
+"""
+
 import random
 import string
 import os
